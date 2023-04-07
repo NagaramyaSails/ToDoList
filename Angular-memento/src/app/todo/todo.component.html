@@ -1,0 +1,20 @@
+<div class="todos-bg-container">
+  <h1 class="todos-heading">Todos</h1>
+  <h1 style="font-weight: 700;">
+      Create <span style="font-weight: 500; font-size: 32px;">Task</span>
+  </h1>
+  <input type="text" id="todoUserInput" class="todo-user-input" placeholder="What needs to be done?" [(ngModel)]="todoItem" />
+  <br>
+  <button class="button" id="addTodoButton" (click)="onItemAdd()">Add</button>
+  <h1 class="todo-items-heading">
+      All Tasks
+  </h1>
+  <ul class="todo-items-container" id="todoItemsContainer" *ngFor="let item of todoItemsArray">
+    <li class=" label-container d-flex flex-row">
+      <input type="checkbox" (click)="statusChange(item.id)" class="checkbox-input" id=`${item.id}` />
+      <label for=`${item.id}` class="checkbox-label">{{item.name}}</label>
+    </li>
+  </ul>
+
+
+</div>
